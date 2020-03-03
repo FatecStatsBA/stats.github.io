@@ -1,0 +1,101 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Stats - seja bem-vindo</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<script src="jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
+<script>
+	$(document).ready(function(){
+		$('#irDireita').on('click', function(){
+			$('#slideBox').animate({
+				'marginLeft' : '0'
+			});
+			$('.camadaTop').animate({
+				'marginLeft' : '100%'
+			});
+		});
+		$('#irEsquerda').on('click', function(){
+			$('#slideBox').animate({
+				'marginLeft' : '50%'
+			});
+			$('.camadaTop').animate({
+				'marginLeft': '0'
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<script src='loginEcadastro.js'> // script PEDRO AQUI
+
+	</script>
+<div id="background">
+	<div class="backDireita">
+		<img class="logo1" src="img/logo.png">
+		<h1 class = "textocadastro">
+			Torne-se um membro
+		</h1>
+		<h5 class = "textocadastro2">
+			Entre com seus dados para iniciarmos<br>
+			a sua conta.
+		</h5>
+	</div>
+	<div class="backEsquerda">
+		<img class="logo2" src="img/logo.png">
+		<h1 class = "textologin">
+			Seja bem-vindx ao Stats
+		</h1>
+		<h5 class = "textologin2">
+			Faça login para podermos começar<br>
+			essa aventura.
+		</h5>
+	</div>
+</div>
+
+<div id="slideBox">
+	<div class="camadaTop">
+		<div class="esquerda">
+
+			<div class="container">
+				<h2 class ="cad">Cadastre-se no Stats</h2>
+				<form id="form1" method="post" onsubmit="return false;"> <! TESTE  ->
+					<div class="form-group">
+						<input type="text" id="usuarioCD" placeholder="Usuário" />
+						<input type="email" id="emailCD" placeholder="Email" />
+						<input type="password" id="senhaCD" placeholder="Senha" />
+						<input type="password" id="senhaConfirme" placeholder="senha" />
+					</div>
+					<div class="form-group"></div>
+						<div class="form-group"></div>
+					<div class="form-group"></div>
+					<button id="cadastrar" onclick="cadastro()">Cadastrar</button>
+					<div class ="voltar">
+						<h3 class="cadastraste">Já se cadastrou? <a class = "texto" id="irEsquerda">Clique aqui.</a></h3>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="direita">
+			<div class="container">
+				<h2>Login no Stats</h2>
+				<form method="post" onsubmit="return false;">
+					<div class="form-group">
+						<input type="text" id="emailLogin" placeholder="Email" />
+						<input type="password" id="senhaLogin" placeholder="Senha" />
+					</div>
+					<h4>Esqueceu a senha?</h4>
+					<button id="login" onclick="loginF()">Login</button>
+				</form>
+				<h3>Não tem uma conta ainda? <a id="irDireita">Clique aqui.</a></h3>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>
